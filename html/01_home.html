@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>首页</title>
+<link rel="stylesheet" type="text/css" href="res/css/css.css" />
+<script type="text/javascript" src="res/js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="res/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="res/js/index.js"></script>
+</head>
+<body>
+<script>
+window.onscroll=function ()
+	{
+		var oDiv=document.getElementById('fly_box_ecnp');
+		var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+		
+		//oDiv.style.top=scrollTop+(document.documentElement.clientHeight-oDiv.offsetHeight)/2+'px';
+		var t=scrollTop+(document.documentElement.clientHeight-oDiv.offsetHeight)/2;
+		startMove(parseInt(t));
+	}
+	
+	var timer=null;
+	
+	function startMove(iTarget)
+	{
+		var oDiv=document.getElementById('fly_box_ecnp');
+		
+		clearInterval(timer);
+		timer=setInterval(function (){
+			var iSpeed=(iTarget-oDiv.offsetTop)/8;
+			iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
+			
+			if(oDiv.offsetTop==iTarget)
+			{
+				clearInterval(timer);
+			}
+			else
+			{
+				oDiv.style.top=oDiv.offsetTop+iSpeed+'px';
+			}
+			
+	//		txt1.value=oDiv.offsetTop+',目标：'+iTarget;
+		}, 30);
+	}
+</script>
+	<div class="fly_box" id="fly_box_ecnp">
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <input type="button" class="btn close_btn" />
+	</div>
+	<div class="header">
+    	<div class="logo">
+        	<a href="">
+            	<img src="res/images/logo.jpg" />
+            </a>
+        </div>
+    	<!--<div class="search_box">
+        	<input type="text" class="txt" value="请输入您要检索的内容" style="color:#666" onblur="if(!value){value=defaultValue;this.style.color='#666'}" onfocus="if(value==defaultValue){value='';this.style.color='#000'}">
+            <input type="button" class="btn" />
+        </div>-->
+        <!--未登录状态-->
+        <div class="user_login" style="display:block;">
+        	<a href="" href="15_regist.html">注册 Register</a>
+         	<a href="" href="14_login.html">登录 Login</a>
+         	<a href="" class="mt_26"><img src="res/images/weixin.jpg" /></a>
+        	<a href="" class="mt_26"><img src="res/images/weibo.jpg" /></a>
+        </div>
+        <!--登录状态-->
+        <!--
+        <div class="user_login" style="display:none;">
+        	<a href="">退出Quit</a>
+            <a href="">Hi 张尔洛</a>
+        </div>
+        -->
+    </div>
+    <div class="nav">
+    	<ul class="left">
+        	<li>
+            	<a href="" class="cur"><span>首页</span>Home</a>
+            </li>
+            <li>
+            	<a href=""><span>公开课</span>Courses</a>
+                <ul>
+                	<li>
+                    	<a href=""><span>临床科研</span>Clinical Research</a>
+                    </li>
+                    <li>
+                    	<a href=""><span>人文素养</span>Humanity</a>
+                    </li>
+                    <li>
+                    	<a href="" class="bor_no"><span>疾病健康</span>Disease</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+            	<a href=""><span>科研基金</span>Fundings</a>
+                <ul>
+                	<li>
+                    	<a href=""><span>心血管基金</span>Cardiovascular</a>
+                    </li>
+                    <li>
+                    	<a href=""><span>生殖基金</span>Fercility</a>
+                    </li>
+                    <li>
+                    	<a href=""><span>肿瘤基金</span>Cancer</a>
+                    </li>
+                    <li>
+                    	<a href=""><span>糖尿病基金</span>Diabetes</a>
+                    </li>
+                    <li>
+                    	<a href="" class="bor_no"><span>甲状腺基金</span>Thyroid</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+            	<a href=""><span>患者援助</span>PAP</a>
+                <ul>
+                	<li>
+                    	<a href=""><span>肿瘤</span>Oncology</a>
+                    </li>
+                    <li>
+                    	<a href="" class="bor_no"><span>生殖</span>Fercility</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+            	<a href=""><span>最新动态</span>News</a>
+                <ul>
+                	<li>
+                    	<a href=""><span>会议动态</span>meetings dynamics</a>
+                    </li>
+                    <li>
+                    	<a href="" class="bor_no"><span>基金动态</span>Fund dynamics</a>
+                    </li>
+                    <li>
+                    	<a href="" class="bor_no"><span>PAP动态</span>PAP dynamics</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <!--<div class="right">
+            <a href="" class="a_icon1"></a>
+            <a href="" class="a_icon2"></a>
+        </div>-->
+        <div class="search_input">
+            <input type="text" class="txt" value="请输入您要检索的内容" style="color:#666" onblur="if(!value){value=defaultValue;this.style.color='#666'}" onfocus="if(value==defaultValue){value='';this.style.color='#000'}">
+            <input type="button" class="btn" />
+        </div>
+    </div>
+    <div class="container">
+    	<div id="slideBox" class="slideBox">
+        	<div class="bd">
+                <ul>
+                    <li><a href="10_news.html"><img src="res/images/1_top1.jpg" /></a></li>
+                    <li><a href="10_news.html"><img src="res/images/1_top2.jpg" /></a></li>
+                    <li><a href="10_news.html"><img src="res/images/1_top3.jpg" /></a></li>
+                    <li><a href="10_news.html"><img src="res/images/1_top4.jpg" /></a></li>
+                </ul>
+            </div>
+            <div class="hd">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <a class="prev" href="javascript:void(0)"></a>
+            <a class="next" href="javascript:void(0)"></a>
+            <script type="text/javascript">
+				jQuery(".slideBox").slide({
+					mainCell:".bd ul",
+					autoPlay:true,
+					effect:"fade"
+				});
+        	</script>
+        </div>
+        <div class="pic_box">
+            <div class="title tit1">
+                <h4 class="left">最新课程<span>Latest Courses</span></h4>
+                <a href="" class="right"><img src="res/images/more1.png" /></a>
+            </div>
+            <div class="picScroll_left">
+                <div class="bd">
+                    <ul class="picList clearfix">
+                        <li>
+                            <div class="pic"><a href=""><img src="res/images/1_1.jpg" /></a></div>
+                            <div class="article">目前临床方案中存在几种典型问题：1 队列研究：基线不均衡 2 回顾性研究：选择偏倚 3 RCT：随机化方案...</div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href=""><img src="res/images/1_2.jpg" /></a></div>
+                            <div class="article">基金立题的构成要形成一个故事，基金项目立题的连贯性：临床现象?基础研究?相关机制?新的基因?未知...</div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href=""><img src="res/images/1_3.jpg" /></a></div>
+                            <div class="article">本次课程就：1 、关于新诊断2型糖尿病短期胰岛素强化治疗后口服二甲双胍的疗效性的临床观察”...</div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href=""><img src="res/images/1_4.jpg" /></a></div>
+                            <div class="article">本次课程就：1 、关于新诊断2型糖尿病短期胰岛素强化治疗后口服二甲双胍的疗效性的临床观察”...</div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href=""><img src="res/images/1_3.jpg" /></a></div>
+                            <div class="article">本次课程就：1 、关于新诊断2型糖尿病短期胰岛素强化治疗后口服二甲双胍的疗效性的临床观察”...</div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href=""><img src="res/images/1_4.jpg" /></a></div>
+                            <div class="article">本次课程就：1 、关于新诊断2型糖尿病短期胰岛素强化治疗后口服二甲双胍的疗效性的临床观察”...</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hd">
+                    <a class="prev"></a>
+                    <a class="next"></a>
+                </div>
+            </div>
+            <script type="text/javascript">
+            jQuery(".picScroll_left").slide({
+				mainCell:".bd ul",
+                autoPage:true,
+                effect:"leftLoop",
+                autoPlay:true,
+                vis:4,
+                trigger:"click"
+            });
+            </script>
+            <div class="img_line">
+            	<a href=""><img src="res/images/1_5.jpg" /></a>
+            </div>
+        </div>
+        <div class="cont_box">
+            <div class="cont_one">
+            	<div class="title tit2">
+                    <h4 class="left">精品课程<span>Latest Courses</span></h4>
+                    <a href="" class="right"><img src="res/images/more2.png" /></a>
+            	</div>
+                <div class="course_list clearfix">
+                	<div class="one_list">
+                    	<div><a href=""><img src="res/images/1_6.jpg" /></a></div>
+                        <div>
+                        	<h4><a href="">从实际案例认识META的基本结构</a></h4>
+                            <p>目前临床方案中存在几种典型问题：1 队列研究：基线不均衡 2 回顾性研究：选择偏倚 3 RCT：随
+机化方案、亚组分析的统计学效力问题</p>
+                        </div>
+                    </div>
+                    <div class="one_list">
+                    	<div><a href=""><img src="res/images/1_7.jpg" /></a></div>
+                        <div>
+                        	<h4><a href="">从实际案例认识META的基本结构</a></h4>
+                            <p>目前临床方案中存在几种典型问题：1 队列研究：基线不均衡 2 回顾性研究：选择偏倚 3 RCT：随
+机化方案、亚组分析的统计学效力问题</p>
+                        </div>
+                    </div>
+                    <div class="one_list mr_0">
+                    	<div><a href=""><img src="res/images/1_8.jpg" /></a></div>
+                        <div>
+                        	<h4><a href="">从实际案例认识META的基本结构</a></h4>
+                            <p>目前临床方案中存在几种典型问题：1 队列研究：基线不均衡 2 回顾性研究：选择偏倚 3 RCT：随
+机化方案、亚组分析的统计学效力问题</p>
+                        </div>
+                    </div>
+                </div>
+                <div><a href=""><img src="res/images/1_20.jpg" /></a></div>
+            </div>
+            <div class="cont_one">
+            	<div class="title tit3">
+                    <h4 class="left">科研基金<span>Scientific Research Funds</span></h4>
+                    <a href="" class="right"><img src="res/images/more3.png" /></a>
+            	</div>
+                <div class="fund_list clearfix">
+                	<div class="one_list">
+                    	<a href=""><img src="res/images/1_9.jpg" /></a>
+                    </div>
+                    <div class="one_list">
+                    	<a href=""><img src="res/images/1_10.jpg" /></a>
+                    </div>
+                    <div class="one_list mr_0">
+                    	<a href=""><img src="res/images/1_11.jpg" /></a>
+                    </div>
+                </div>
+                <div><a href=""><img src="res/images/1_12.jpg" /></a></div>
+            </div>
+            <div class="cont_one">
+            	<div class="title tit4">
+                    <h4>患者援助<span>Patient Assistance</span></h4>
+            	</div>
+                <div class="help_list clearfix">
+                	<div class="one_list">
+                    	<a href=""><img src="res/images/1_13.jpg" /></a>
+                    </div>
+                    <div class="one_list mr_0">
+                    	<a href=""><img src="res/images/1_14.jpg" /></a>
+                    </div>
+                </div>
+            </div>
+            <div class="cont_one">
+            	<div class="title tit5">
+                    <h4>友情链接<span>Other Links</span></h4>
+            	</div>
+                <div class="friendlink_list clearfix">
+                	<div class="one_list">
+                    	<a href=""><img src="res/images/1_15.jpg" /></a>
+                    </div>
+                    <div class="one_list">
+                    	<a href=""><img src="res/images/1_16.jpg" /></a>
+                    </div>
+                    <div class="one_list">
+                    	<a href=""><img src="res/images/1_17.jpg" /></a>
+                    </div>
+                    <div class="one_list">
+                    	<a href=""><img src="res/images/1_18.jpg" /></a>
+                    </div>
+                    <div class="one_list">
+                    	<a href=""><img src="res/images/1_19.jpg" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+    	<ul class="clearfix">
+        	<li>
+            	<a href="">发现课程 / Find Courses</a>
+            </li>
+            <li>
+            	<a href="">关于我们 / About us</a>
+            </li>
+            <li>
+            	<a href="">联系我们 / Contact us</a>
+            </li>
+            <li>
+            	<a href="">关注我们 / Follow us</a>
+            </li>
+        </ul>
+    </div>
+    <div class="footer">
+    	<div class="clearfix">
+            <div class="left">
+                <img src="res/images/logo2.jpg" />
+            </div>
+            <div class="left clearfix">
+                <ul class="wid1 clearfix">
+                    <li>
+                        <a href="">公开课</a>
+                    </li>
+                    <li>
+                        <a href="">Courses</a>
+                    </li>
+                    <li>
+                        <a href="">科研基金</a>
+                    </li>
+                    <li>
+                        <a href="">Fundings</a>
+                    </li>
+                    <li>
+                        <a href="">患者援助</a>
+                    </li>
+                    <li>
+                        <a href="">PAP</a>
+                    </li>
+                    <li>
+                        <a href="">最新动态</a>
+                    </li>
+                    <li>
+                        <a href="">News</a>
+                    </li>
+                </ul>
+                <ul class="wid2 clearfix">
+                    <li>版权声明</li>
+                    <li>Copyright statement</li>
+                    <li>常见问题</li>
+                    <li>Common problem</li>
+                </ul>
+                <ul class="wid3 clearfix">
+                    <li>微信号：默博士讲堂</li>
+                    <li>WeChat: Dr M </li>
+                    <li>网址：drm.medlive.cn</li>
+                    <li>ID: drm.medlive.cn</li>
+                </ul>
+            </div>
+            <div class="ewm_box">
+                <img src="res/images/ewm1.jpg" />
+                <p>关注微信</p>
+                <img src="res/images/ewm2.jpg" />
+                <p>下载APP</p>
+            </div>
+        </div>
+        <div class="center">京公网安备11010502021568京ICP备08010023号-1© 2005-2014 </div>
+    </div>
+    <div class="cover_box" style="display:none;"></div>
+    <div class="pop_box" style="display:none;">
+    	<p class="font30">网站改版中，<br />5月上线，敬请期待！</p>
+    	<input type="button" class="btn close_btn" />
+    </div>
+</body>
+</html>

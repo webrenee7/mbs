@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<title>微信列表</title>
+<link rel="stylesheet" type="text/css" href="res/css/mobile.css" />
+<link rel="stylesheet" type="text/css" href="res/css/swiper.min.css">
+<script type="text/javascript" src="res/js/jquery.js"></script>
+<script type="text/javascript" src="res/js/swiper.jquery.min.js"></script> 
+</head>
+<body>
+	<div class="img_box">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide1">
+                    <a href=""><img src="res/test_images/4.jpg" /></a>
+                </div>
+                <div class="swiper-slide slide2">
+                    <a href=""><img src="res/test_images/4.jpg" /></a>
+                </div>
+                <div class="swiper-slide slide3">
+                    <a href=""><img src="res/test_images/4.jpg" /></a>
+                </div>
+            </div>
+        </div>
+        <div class="swiper_switch"></div>
+        <script>
+			var mySwiper = new Swiper ('.swiper-container', {
+			  loop:true,
+			  autoplay:3000,
+			  autoplayDisableOnInteraction : false,
+			  speed:100,
+			  effect:'coverflow',
+			  pagination:'.swiper_switch',
+			  paginationElement : 'li',
+			  paginationClickable :true,
+			  paginationBulletRender: function (index, className) {
+				return '<li class="' + className + '">'+ '</li>';
+			 },
+			  coverflow:{
+					rotate:30,
+					stretch:10,
+					depth:60,
+					modifier:2,
+					slideShadows:true
+				  }
+			}) ;
+    	</script>
+    </div>
+    <div class="search_box">
+    	<input type="text" class="txt" placeholder="搜索关键词" />
+        <input type="button" class="btn" value="提交" />
+    </div>
+	<div class="detail_box bgf">
+        <div class="detail_list">
+        	<div class="one_list">
+            	<a href="">
+                    <div class="l_img">
+                        <img src="res/test_images/1.jpg" />
+                    </div>
+                    <div class="r_info">
+                        <h4>【人文素养】</h4>
+                        <p>冠状动脉介入治疗的策略选择</p>
+                    </div>
+                </a>
+            </div>
+            <div class="one_list">
+            	<a href="">
+                    <div class="l_img">
+                        <img src="res/test_images/2.jpg" />
+                    </div>
+                    <div class="r_info">
+                        <h4>【临床科研】</h4>
+                        <p>难治性高血压诊治——阜外经验</p>
+                    </div>
+                </a>
+            </div>
+            <div class="one_list">
+            	<a href="">
+                    <div class="l_img">
+                        <img src="res/test_images/3.jpg" />
+                    </div>
+                    <div class="r_info">
+                        <h4>【疾病健康】</h4>
+                        <p>WHF发布最新版全球心血管...</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
